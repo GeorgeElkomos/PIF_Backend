@@ -1,0 +1,23 @@
+# Core Django
+django==5.2.4
+djangorestframework==3.16.0
+
+# Authentication & Security
+djangorestframework-simplejwt==5.5.1
+django-cors-headers==4.7.0
+django-environ==0.12.0
+
+# Documentation
+drf-spectacular==0.28.0
+
+# Development Tools
+black==25.1.0
+isort==6.0.1
+flake8==7.3.0
+
+# Testing
+pytest-django==4.11.1
+factory-boy==3.3.3
+
+# Additional utilities
+Pillow==11.1.0  # For image handling if needed

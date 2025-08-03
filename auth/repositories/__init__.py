@@ -1,0 +1,3 @@
+"""
+Authentication repositories module initialization.
+"""

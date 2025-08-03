@@ -6,7 +6,6 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils import timezone
 
-
 class Company(models.Model):
     """
     Company model to manage different companies in the system.
@@ -15,6 +14,30 @@ class Company(models.Model):
         max_length=100,
         unique=True,
         help_text="Company name must be unique"
+    )
+    arabic_name = models.CharField(
+        max_length=100,
+        null=True,
+        blank=True,
+        help_text="Arabic name of the company"
+    )
+    cr_number = models.CharField(
+        max_length=50,
+        null=True,
+        blank=True,
+        help_text="Commercial Registration Number"
+    )
+    moi_number = models.CharField(
+        max_length=50,
+        null=True,
+        blank=True,
+        help_text="Ministry of Interior Number"
+    )
+    country_of_incorporation = models.CharField(
+        max_length=100,
+        null=True,
+        blank=True,
+        help_text="Country where the company is legally registered"
     )
     is_active = models.BooleanField(
         default=True,

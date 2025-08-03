@@ -18,6 +18,7 @@ from drf_spectacular.views import (
 api_v1_patterns = [
     path('auth/', include('authentication.urls')),
     path('dashboard/', include('dashboard.urls')),
+    path('investments/', include('Investments.urls')),
 ]
 
 urlpatterns = [

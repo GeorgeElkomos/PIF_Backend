@@ -90,10 +90,10 @@ class AdminInvestmentView(APIView):
                     year=data['year'],
                     period=data['period'],
                     entity=entity,
-                    asset_code=data.get('Asset_code')
                 )
 
                 for attr, value in {
+                    'Asset_code':data.get('Asset_code'),
                     'ownership': data['Ownership_Persentage'],
                     'aquization_date': data.get('aquization_date'),
                     'direct_parent': parent,

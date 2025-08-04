@@ -7,6 +7,8 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.core.validators import MinValueValidator
 
+
+from django.conf import settings
 from authentication.models import Company
 
 
@@ -111,9 +113,24 @@ class Investment(models.Model):
         default=None,
         help_text="Principal activities of the investment entity"
     )
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.PROTECT,
+        related_name='created_investments',
+        help_text="User who created the investment record",
+        null=True,
+        blank=True
+    )
     created_at = models.DateTimeField(default=timezone.now)
+    updated_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.PROTECT,
+        related_name='updated_investments',
+        help_text="User who updated the investment record",
+        null=True,
+        blank=True
+    )
     updated_at = models.DateTimeField(auto_now=True)
-    
     class Meta:
         db_table = 'investments'
         verbose_name = 'Investment'

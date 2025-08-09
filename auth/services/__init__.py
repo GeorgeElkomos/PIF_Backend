@@ -1,3 +1,0 @@
-"""
-Authentication services module initialization.
-"""

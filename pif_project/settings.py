@@ -28,6 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -38,6 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework_simplejwt.token_blacklist',
     'authentication',
+    'users',
+    'companies',
+    'entities',
+    'period_deadline',
+    'investment',
 ]
 
 SIMPLE_JWT = {
